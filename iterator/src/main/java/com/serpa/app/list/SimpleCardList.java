@@ -1,7 +1,12 @@
-package com.serpa.app.externaliterator;
+package com.serpa.app.list;
 
 
-public class SimpleCardList implements CardIterable{
+import com.serpa.app.externaliterator.CardIterable;
+import com.serpa.app.externaliterator.CardIterator;
+import com.serpa.app.externaliterator.SimpleCardIterator;
+
+
+public class SimpleCardList implements CardIterable {
 
     private Integer length = 0;
     private Node firstNode = null;

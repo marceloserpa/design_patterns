@@ -1,5 +1,9 @@
 package com.serpa.app.externaliterator;
 
+import com.serpa.app.list.Card;
+import com.serpa.app.list.Node;
+import com.serpa.app.list.SimpleCardList;
+
 
 public class SimpleCardIterator implements CardIterator{
 

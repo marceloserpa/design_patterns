@@ -1,4 +1,4 @@
-package com.serpa.app.externaliterator;
+package com.serpa.app.list;
 
 
 public class Node {

@@ -1,7 +1,7 @@
 package com.serpa.app.externaliterator;
 
 
-interface CardIterable {
+public interface CardIterable {
 
     CardIterator iterator();
 

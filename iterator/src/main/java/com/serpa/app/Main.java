@@ -1,8 +1,8 @@
 package com.serpa.app;
 
-import com.serpa.app.externaliterator.Card;
+import com.serpa.app.list.Card;
 import com.serpa.app.externaliterator.CardIterator;
-import com.serpa.app.externaliterator.SimpleCardList;
+import com.serpa.app.list.SimpleCardList;
 
 
 public class Main {
