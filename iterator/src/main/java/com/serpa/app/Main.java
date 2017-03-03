@@ -14,6 +14,8 @@ public class Main {
         list.add(new Card("Gaia the Fierce Knight"));
         list.add(new Card("Curse of Dragon"));
 
+
+        System.out.println("=== External Iterator ===");
         CardIterator iterator = list.iterator();
         while(iterator.hasNext()){
             Card card = iterator.next();
@@ -32,6 +34,9 @@ public class Main {
             Card card = iterator3.next();
             System.out.println(card.getName());
         }
+
+        System.out.println("=== Internal Iterator ===");
+        list.forEachInternal(card -> System.out.println(card.getName()));
 
     }
 

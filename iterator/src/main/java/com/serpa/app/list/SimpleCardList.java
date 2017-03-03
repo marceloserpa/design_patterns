@@ -1,9 +1,10 @@
 package com.serpa.app.list;
 
-
 import com.serpa.app.externaliterator.CardIterable;
 import com.serpa.app.externaliterator.CardIterator;
 import com.serpa.app.externaliterator.SimpleCardIterator;
+
+import java.util.function.Consumer;
 
 
 public class SimpleCardList implements CardIterable {
@@ -35,5 +36,13 @@ public class SimpleCardList implements CardIterable {
 
     public CardIterator iterator() {
         return new SimpleCardIterator(this);
+    }
+
+    public void forEachInternal(Consumer<Card> fn){
+        CardIterator iterator = iterator();
+        while (iterator.hasNext()){
+            Card card = iterator.next();
+            fn.accept(card);
+        }
     }
 }
