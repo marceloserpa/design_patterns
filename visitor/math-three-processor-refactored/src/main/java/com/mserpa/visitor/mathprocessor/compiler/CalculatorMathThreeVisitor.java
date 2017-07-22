@@ -10,8 +10,9 @@ public class CalculatorMathThreeVisitor implements MathThreeVisitor{
     @Override
     public Node visit(Root root) {
         Node left = root.getLeft();
-        Node resultL = left instanceof Number ? visit((Number)left) : visit((Operation) left);
-        return resultL;
+        return left instanceof Number
+            ? visit((Number) left)
+            : visit((Operation) left);
     }
 
     @Override
@@ -36,64 +37,29 @@ public class CalculatorMathThreeVisitor implements MathThreeVisitor{
         Double nLeft = Double.valueOf(totalLeft.getValue());
         Double nRight = Double.valueOf(totalRight.getValue());
 
+        return toNumberNode(calculate(expression, nLeft, nRight));
+    }
+
+    public Double calculate(String expression, Double number1, Double number2) {
         if("*".equals(expression)){
-            return new Number(String.valueOf(nLeft * nRight));
+            return number1 * number2;
         } else if("+".equals(expression)){
-            return new Number(String.valueOf(nLeft + nRight));
+            return number1 + number2;
         } else if("-".equals(expression)){
-            return new Number(String.valueOf(nLeft - nRight));
+            return number1 - number2;
         } else if("/".equals(expression)){
-            return new Number(String.valueOf(nLeft / nRight));
+            return number1 / number2;
         }
         return null;
+    }
+
+    public Number toNumberNode(Double value){
+        return new Number(String.valueOf(value));
     }
 
     @Override
     public Node visit(Number number) {
         return number;
     }
-
-
-    /**
-    public Double calc(Number number){
-        return Double.valueOf(number.getValue());
-    }
-
-    public Double calc(Root root){
-        Node left = root.getLeft();
-        Double resultL = left instanceof Number ? calc((Number)left) : calc((Operation) left);
-        return resultL;
-    }
-
-    public Double calc(Operation operation){
-        String expression = operation.getValue();
-
-        Double totalLeft = null;
-        Double totalRight = null;
-
-        if(operation.getLeft() instanceof Operation){
-            totalLeft = calc((Operation) operation.getLeft());
-        } else if(operation.getLeft() instanceof Number){
-            totalLeft = Double.valueOf(operation.getLeft().getValue());
-        }
-
-        if(operation.getRight() instanceof Operation){
-            totalRight = calc((Operation) operation.getRight());
-        } else if(operation.getRight() instanceof Number){
-            totalRight = Double.valueOf(operation.getRight().getValue());
-        }
-
-        if("*".equals(expression)){
-            return totalLeft * totalRight;
-        } else if("+".equals(expression)){
-            return totalLeft + totalRight;
-        } else if("-".equals(expression)){
-            return totalLeft - totalRight;
-        } else if("/".equals(expression)){
-            return totalLeft / totalRight;
-        }
-
-        return 0D;
-    }**/
 
 }
