@@ -1,13 +1,18 @@
 package com.mserpa.visitor.mathprocessor;
 
-
+import com.mserpa.visitor.mathprocessor.compiler.CalculatorMathThreeVisitor;
 import com.mserpa.visitor.mathprocessor.node.Number;
 import com.mserpa.visitor.mathprocessor.node.Operation;
 import com.mserpa.visitor.mathprocessor.node.Root;
+import org.junit.Test;
 
-public class App {
+import static org.junit.Assert.*;
 
-    public static void main(String[] args) {
+
+public class MathThreeProcessorTest {
+
+    @Test
+    public void shouldCalculateCorrectly() throws Exception {
 
         Number n1 = new Number("8");
         Number n2 = new Number("2");
@@ -19,9 +24,10 @@ public class App {
 
         Root root = new Root(op2);
 
-        ParseTree treeCalc = new ParseTree();
-        System.out.println(treeCalc.calc(root));
+        MathThreeProcessor mathThreeProcessor = new MathThreeProcessor();
 
+        assertTrue(21 == mathThreeProcessor.calculate(root));
     }
+
 
 }

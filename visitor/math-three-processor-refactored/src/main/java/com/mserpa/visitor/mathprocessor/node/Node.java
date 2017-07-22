@@ -1,6 +1,8 @@
 package com.mserpa.visitor.mathprocessor.node;
 
 
+import com.mserpa.visitor.mathprocessor.compiler.MathThreeVisitor;
+
 public abstract class Node {
 
     private String value;
@@ -12,6 +14,8 @@ public abstract class Node {
         this.left = left;
         this.right = right;
     }
+
+    public abstract Node accept(MathThreeVisitor mathThreeVisitor);
 
     public String getValue() {
         return value;
