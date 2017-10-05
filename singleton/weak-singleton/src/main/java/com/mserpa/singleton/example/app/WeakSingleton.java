@@ -16,7 +16,6 @@ public class WeakSingleton {
                     WeakSingleton weakSingleton = new WeakSingleton();
                     reference = new WeakReference<WeakSingleton>(weakSingleton);
                 }
-                return reference.get();
             }
         }
         return reference.get();
