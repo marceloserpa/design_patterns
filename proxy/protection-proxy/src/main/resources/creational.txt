@@ -1,0 +1,12 @@
+Chain of responsibility
+Command
+Interpreter
+Iterator
+Mediator
+Memento
+Null Object
+Observer
+State
+Strategy
+Template method
+Visitor
