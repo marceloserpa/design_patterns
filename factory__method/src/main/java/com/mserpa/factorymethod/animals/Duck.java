@@ -1,4 +1,4 @@
-package br.com.mserpa.app;
+package com.mserpa.factorymethod.animals;
 
 public class Duck implements Animal {
 

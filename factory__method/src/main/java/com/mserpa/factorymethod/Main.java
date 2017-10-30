@@ -1,4 +1,8 @@
-package br.com.mserpa.app;
+package com.mserpa.factorymethod;
+
+import com.mserpa.factorymethod.animals.Animal;
+import com.mserpa.factorymethod.factory.AnimalCreator;
+import com.mserpa.factorymethod.factory.AnimalCreatorFactory;
 
 public class Main {
 
