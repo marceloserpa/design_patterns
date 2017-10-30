@@ -1,5 +1,9 @@
 package br.com.mserpa.app;
 
+import br.com.mserpa.app.factory.LinuxWidgetFactory;
+import br.com.mserpa.app.factory.WidgetFactory;
+import br.com.mserpa.app.factory.WindowsWidgetFactory;
+
 public class Main {
 
     public static void main(String[] args){
@@ -15,9 +19,6 @@ public class Main {
         WidgetFactory linuxWidgetFactory = new LinuxWidgetFactory();
         PageConstructorClient linuxPageConstructor = new PageConstructorClient(linuxWidgetFactory);
         linuxPageConstructor.render();
-
-
-
 
     }
 

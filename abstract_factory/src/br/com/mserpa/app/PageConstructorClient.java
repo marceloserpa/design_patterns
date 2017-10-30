@@ -1,5 +1,9 @@
 package br.com.mserpa.app;
 
+import br.com.mserpa.app.button.Button;
+import br.com.mserpa.app.factory.WidgetFactory;
+import br.com.mserpa.app.label.Label;
+
 public class PageConstructorClient {
 
     private WidgetFactory widgetFactory;
