@@ -24,8 +24,8 @@ public class SwapiRestClient {
             return performRequest(httpClient, httpGet);
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException("SwapiRestClient error");
         }
-        return null;
     }
 
     private CharacterApi performRequest(CloseableHttpClient httpClient, HttpGet httpGet) throws IOException {
